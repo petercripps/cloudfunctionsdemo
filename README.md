@@ -1,5 +1,4 @@
-# cloudfunctionsdemo
-IBM Cloud Functions Demo
+# IBM Cloud Functions Demo
 1. Give brief overview of serverless using the appropriate pages from the presentation.
 2. Explain that IBM Functions built on OpenWhisk is an open platform that allows FaaS on Bluemix, locally or any Cloud platform where you can deploy the OpenWhisk runtime.
 3. The demo has four prepared functions/actions written in JavaScript to show how: A lat/long can be obtained using a location name using Google Maps API (`location-to-latlong.js`); A weather forecast for a provided lat/long can be obtained using the IBM Weather service (`forecast-from-latlong.js`); The output from the weather forecast action can be changed to make it acceptable as input into the Watson translate service (`prep-translate-input.js`); The weather forecast can be translated into e.g. Spanish (`watson-translator.js`).
