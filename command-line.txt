@@ -1,0 +1,34 @@
+// Connect to Bluemix US South Region region
+bx api https://api.ng.bluemix.net
+
+// Connect to Bluemix UK Region region
+bx api https://api.eu-gb.bluemix.net
+
+// Login to an org and space within region
+bx login -u pete_cripps@uk.ibm.com -o pete_cripps@uk.ibm.com -s dev
+
+// Create a new action
+bx wsk action create location-to-latlong location-to-latlong.js
+bx wsk action create forecast-from-latlong forecast-from-latlong.js
+bx wsk action create watson-translator watson-translator.js
+
+// List current actions
+bx wsk action list
+
+// Update an existing action
+bx wsk action update location-to-latlong location-to-latlong.js
+bx wsk action update forecast-from-latlong forecast-from-latlong.js
+
+// Invoke an action
+bx wsk action invoke location-to-latlong -b -r -p address "London"
+bx wsk action invoke forecast-from-latlong -b -r -p lat "51.507" -p lng "-0.1277"
+bx wsk action invoke watson-translator -b -r -p username "79cb1cb1-639d-4292-8c88-cd1cd1df2035" -p password "qKvplSj2ShFK" -p payload "Time is nearly up"
+
+// List all actions in a workspace
+bx wsk action list
+
+// List all packages
+bx wsk package list
+
+// Invoke the Watson Translate package
+bx wsk action invoke 'Bluemix_Language Translator-o9_Credentials-1'/translator -b -r -p payload "Blue skies ahead" -p translateFrom "en" -p translateTo "fr"
